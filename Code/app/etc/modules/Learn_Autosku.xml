@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Learn_Autosku>
+            <codePool>local</codePool>
+            <active>true</active>
+            <depends>
+                <Mage_Catalog />
+            </depends>
+        </Learn_Autosku>
+    </modules>
+</config>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Learn_Autosku>
+            <version>1.0.0</version>
+        </Learn_Autosku>
+    </modules>
+    
+    <global>
+        <blocks>
+            <autosku>
+                <class>Learn_Autosku_Block</class>
+            </autosku>
+            <adminhtml>
+                <rewrite>                                       
+                    <catalog_product_edit>Learn_Autosku_Block_Adminhtml_Catalog_Product_Edit</catalog_product_edit>
+                </rewrite>
+            </adminhtml>
+            <!-- Mage_Adminhtml_Block_Catalog_Product_Edit (rewrite) -->
+        </blocks>
+        
+        <helpers>
+            <autosku>
+                <class>Learn_Autosku_Helper</class>
+            </autosku>
+        </helpers>
+        
+        <models>
+            <autosku>
+                <class>Learn_Autosku_Model</class>
+            </autosku>
+        </models>
+    </global>
+    
+    <adminhtml>
+        <events>
+            <catalog_product_save_before><!-- observe the event -->
+                <observers>
+                    <autosku>
+                        <class>Learn_Autosku_Model_Observer</class>
+                        <method>autoSkuGenerate</method>
+                    </autosku>
+                </observers>
+            </catalog_product_save_before>
+        </events>
+    </adminhtml>
+    
+    <default>
+        <autosku_tab>
+            <autosku_setting>
+                <autosku_active>1</autosku_active>
+                <autosku_prefix>PRE</autosku_prefix>
+                <autosku_suffix>SUF</autosku_suffix>
+                <autosku_padding>5</autosku_padding>
+                <autosku_type>1</autosku_type>
+            </autosku_setting>      
+        </autosku_tab>
+    </default>
+</config>

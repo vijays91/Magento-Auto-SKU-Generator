@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <learn_store translate="label" module="autosku">
+            <label>Auto Sku</label>
+            <class>admin-system-config-autosku</class>
+            <sort_order>101</sort_order>
+        </learn_store>
+    </tabs>	
+	
+    <sections>
+        <autosku_tab translate="label" module="autosku">
+            <label>Auto Sku</label>
+            <tab>learn_store</tab>
+            <sort_order>1</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <autosku_setting translate="label comment">
+                    <label>Auto SKU Setting</label>
+                    <sort_order>502</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <autosku_active translate="label comment">
+                            <label>Auto SKU</label>
+                            <comment>Enable and Disable the Auto SKU.</comment>
+                            <validate>required-entry</validate>
+							<frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </autosku_active>
+                        <autosku_prefix translate="label comment">
+                            <label>Prefix of SKU </label>
+                            <frontend_type>text</frontend_type>
+                            <comment>Maximun 4 character and minimum 2 character.</comment>
+                            <validate>required-entry validate-length maximum-length-4 minimum-length-2</validate>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </autosku_prefix>
+                        <autosku_suffix translate="label comment">
+                            <label>Suffix of SKU </label>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-length maximum-length-4 minimum-length-2</validate>
+                            <comment>Maximun 4 character and minimum 2 character.</comment>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </autosku_suffix>
+                        <autosku_padding translate="label comment">
+                            <label>Auto increment number padding</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>required-entry validate-number validate-length maximum-length-2 minimum-length-1</validate>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </autosku_padding>  
+                        <autosku_type translate="label comment">
+                            <label>String of Sku</label>
+							<frontend_type>select</frontend_type>
+                            <source_model>autosku/dropdown_type</source_model>
+                            <validate>required-entry</validate>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </autosku_type>
+                     </fields>
+                </autosku_setting>
+            </groups>
+        </autosku_tab>
+    </sections>
+</config>
